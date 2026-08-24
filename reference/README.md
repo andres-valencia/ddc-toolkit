@@ -16,7 +16,13 @@ enough. `MONITORCONTROL.dll` inside Artery imports from there rather than going
 through a private driver path.
 
 Lines beginning `attached:` are the capture tool announcing which process it
-hooked; everything else is monitor traffic, verbatim.
+hooked; everything else is monitor traffic.
+
+The capture tool printed its column labels in Spanish. Four of them were
+translated here — `lee`/`ESCRIBE`/`FALLO` to `READS`/`WRITES`/`FAIL`, and the
+banner line — padded to the same width so the columns still line up. **No
+timestamp, process, register or value was touched**, and the file is otherwise
+byte-for-byte what the capture produced, Windows line endings included.
 
 This is what settled several questions that hardware testing could not:
 
