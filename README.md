@@ -107,6 +107,57 @@ client, and the monitor can be driven entirely from a shell or a script.
 
 ---
 
+## Using this on a different monitor
+
+The project was written for one model, but it splits cleanly into a part that
+is standard and a part that is not.
+
+**Works unchanged on any DDC/CI monitor.** These are VESA MCCS standard codes,
+and the control table already uses them:
+
+| | |
+|---|---|
+| `0x60` input source | `0x10` `0x12` brightness, contrast |
+| `0x62` speaker volume | `0x14` color preset · `0x16` `0x18` `0x1A` RGB gains |
+| `0xD6` power | `0x87` sharpness · `0x72` gamma · `0x86` scaling |
+
+Input codes `0x0F` (DisplayPort), `0x11` and `0x12` (HDMI) are standard too.
+`0x31` for USB-C is **not** — it is a vendor extension, and other makers use
+different values. Adjust `PORTS` in `lib/r45w.py`.
+
+**Needs remapping.** Everything interesting is manufacturer-reserved
+(`0xE0`-`0xFF`) and differs per vendor, sometimes per model: the layout register
+(`0xF5` here), window swapping (`0xF2`), the KVM index mechanism (`0xF8`/`0xF7`),
+picture modes (`0xF9`), and the read-only status registers. None of that will
+mean the same thing on a Dell or an LG.
+
+**What the project gives you for that work:**
+
+- `tools/ddc-snap` and the method it encodes: dump every register, change
+  exactly one setting in the monitor's OSD, dump again, diff. Whatever moved is
+  the register you want. It already filters the codes that produce phantom
+  changes.
+- `REGISTERS.md`'s trap list. These are firmware behaviours, not quirks of this
+  unit, and versions of them show up on other monitors: registers whose value
+  spans two bytes while the tool shows one, features hidden behind an
+  index/value pair, unreadable registers that echo instead of erroring, and
+  capabilities strings that both over- and under-declare.
+- A control table where adding a register is one entry, and it appears in the
+  CLI and the web UI at once.
+
+**If your monitor is also a Lenovo**, start from
+[`reference/lenovo-vcp-codes.json`](reference/): that table is generic across
+Lenovo models and names most of the reserved codes. It will not always be right
+for your model — it calls `0xF4` "PIP Size" and on this one that register is
+layout mode plus swap flag — but it turns blind probing into checking a
+hypothesis.
+
+Expect the vendor half to be real work. Mapping this monitor took several
+sessions, and most of the wrong turns are documented in `REGISTERS.md` precisely
+so the next person can skip them.
+
+---
+
 ## What works and what does not
 
 | Works by command | Does not |
