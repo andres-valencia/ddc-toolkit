@@ -1,19 +1,19 @@
 18:28:32.945  LenovoDisplayControlCenter.exe(60580) dxva2.dll en 0x54d70000
 18:28:32.945  LenovoDisplayControlCenter.exe(60580) hook SetVCPFeature OK
 18:28:32.945  LenovoDisplayControlCenter.exe(60580) hook GetVCPFeature OK
-enganchado: LenovoDisplayControlCenter.exe pid 60580
+attached: LenovoDisplayControlCenter.exe pid 60580
 18:28:32.954  LenovoDisplayControlCenterService.exe(15620) dxva2.dll en 0x54d70000
 18:28:32.954  LenovoDisplayControlCenterService.exe(15620) hook SetVCPFeature OK
 18:28:32.954  LenovoDisplayControlCenterService.exe(15620) hook GetVCPFeature OK
-enganchado: LenovoDisplayControlCenterService.exe pid 15620
+attached: LenovoDisplayControlCenterService.exe pid 15620
 18:28:32.966  DCCPIPCtrlWnd.exe(17708)           dxva2.dll en 0x54d70000
 18:28:32.966  DCCPIPCtrlWnd.exe(17708)           hook SetVCPFeature OK
 18:28:32.966  DCCPIPCtrlWnd.exe(17708)           hook GetVCPFeature OK
-enganchado: DCCPIPCtrlWnd.exe pid 17708
+attached: DCCPIPCtrlWnd.exe pid 17708
 18:28:32.977  FloatingMenu.exe(12580)            dxva2.dll en 0x54d70000
 18:28:32.977  FloatingMenu.exe(12580)            hook SetVCPFeature OK
 18:28:32.977  FloatingMenu.exe(12580)            hook GetVCPFeature OK
-enganchado: FloatingMenu.exe pid 12580
+attached: FloatingMenu.exe pid 12580
 --- trazando. Usa Artery ahora. ---
 18:28:35.622  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
 18:28:40.697  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
@@ -221,4 +221,4 @@ enganchado: FloatingMenu.exe pid 12580
 18:33:32.076  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
 18:33:32.242  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
 18:33:32.413  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
---- fin de la traza ---
+--- end of trace ---

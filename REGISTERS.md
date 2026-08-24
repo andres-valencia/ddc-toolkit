@@ -3,7 +3,7 @@
 Everything here was measured against a real monitor over DDC/CI, on Linux with
 `ddcutil`. Where something could not be verified, it says so.
 
-Product code `0x67b1`, MCCS 2.2, firmware `0xC9` = `0x0101`.
+Product code `0x67b1`, MCCS 2.2, firmware (`0xC9`) `0x0101`.
 
 > **Evidence hierarchy.** When sources disagree, believe them in this order: a
 > trace of Lenovo's own utility talking to the monitor, then Lenovo's generic

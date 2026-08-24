@@ -15,6 +15,9 @@ in `dxva2.dll` — the same public API any DDC tool uses, so a user-space hook w
 enough. `MONITORCONTROL.dll` inside Artery imports from there rather than going
 through a private driver path.
 
+Lines beginning `attached:` are the capture tool announcing which process it
+hooked; everything else is monitor traffic, verbatim.
+
 This is what settled several questions that hardware testing could not:
 
 - The KVM bindings are always written **in pairs**, ~120 ms apart, and the last
