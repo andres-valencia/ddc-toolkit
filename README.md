@@ -7,6 +7,17 @@ and power. Without touching the monitor's joystick.
 Runs on **Linux with `ddcutil`**, including over the DisplayPort of an NVIDIA
 card with the proprietary driver — contrary to what is usually claimed.
 
+DDC/CI rides the video link itself, so any modern digital connection carries it:
+the controlling machine talks to the monitor over its own cable, whichever port
+that is. What is **verified here** is DisplayPort on NVIDIA's proprietary
+driver, the combination most often reported as broken. HDMI and USB-C as the
+control link should work the same and are **untested in this project**.
+
+One difference worth knowing: over DisplayPort and USB-C the I2C lines are
+multiplexed onto the AUX channel, while over HDMI and DVI they sit on dedicated
+pins. It makes no difference to `ddcutil`, but it is why hardware bus sniffing
+only works over HDMI or DVI.
+
 ```
 $ r45w
 

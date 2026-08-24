@@ -240,6 +240,13 @@ that looks like the monitor's fault.
   logout and keeps serving from another device.
 - **The I2C bus number is not stable across boots** (`/dev/i2c-9` one day,
   `/dev/i2c-11` the next). Select by display number or serial, never by path.
+- **Which port you control from does not matter to `ddcutil`.** DDC/CI travels
+  on the video link, so the machine driving the monitor uses whichever cable it
+  is plugged into. Everything documented here was measured over DisplayPort with
+  NVIDIA's proprietary driver; HDMI and USB-C are expected to behave the same
+  but were not tested. The physical difference — AUX-multiplexed I2C on
+  DisplayPort and USB-C versus dedicated pins on HDMI and DVI — only matters if
+  you want to sniff the bus with hardware.
 
 ### Performance
 
