@@ -1,20 +1,48 @@
-# ddc-toolkit — DDC/CI control for monitors, register map included
+# ddc-toolkit
 
-The monitor mapped so far is the **Lenovo Legion R45w-30**, and its tool is
-`r45w`. The parts that carry over to other monitors are listed further down.
+**One ultrawide, several machines, no joystick.** Choose which computer goes in
+each half of the screen, split it or unsplit it, move the keyboard and mouse to
+the other machine, and set brightness, colour or volume — from a terminal, or
+from your phone.
 
-Drive an ultrawide monitor shared between several machines entirely by command:
-which input goes in each window, the layout, the built-in KVM, picture settings
-and power. Without touching the monitor's joystick.
-
+It works over **DDC/CI**, the channel already inside your video cable, so
+nothing extra is plugged in and nothing runs on the machines being switched.
 Runs on **Linux with `ddcutil`**, including over the DisplayPort of an NVIDIA
-card with the proprietary driver — contrary to what is usually claimed.
+card with the proprietary driver — the combination most often reported as
+broken.
+
+<img src="docs/ui-mobile.png" width="300" align="right" alt="The web interface on a phone: the screen drawn to scale with a source on each half, and the source picker open.">
+
+The monitor worked out so far is the **Lenovo Legion R45w-30**. Getting there
+meant mapping the manufacturer's undocumented registers — window layout, the
+built-in KVM, per-window inputs — none of which appear in the MCCS standard.
+[`REGISTERS.md`](REGISTERS.md) is that map, with the evidence behind every
+entry, and [what carries over to other monitors](#using-this-on-a-different-monitor)
+is written down.
+
+Two ways in, one core:
+
+- `r45w`, a CLI where everything is doable and scriptable.
+- A small web service on your own network, for the phone in your pocket.
+
+<br clear="right">
+
+## The web interface
+
+Dark by default, light on a switch. The screen is drawn to scale, so what you
+see is the shape the monitor is actually in. Tap a half to change its source.
+
+| | |
+|---|---|
+| ![Dark](docs/ui-dark.png) | ![Light](docs/ui-light.png) |
+
+---
 
 DDC/CI rides the video link itself, so any modern digital connection carries it:
 the controlling machine talks to the monitor over its own cable, whichever port
 that is. What is **verified here** is DisplayPort on NVIDIA's proprietary
-driver, the combination most often reported as broken. HDMI and USB-C as the
-control link should work the same and are **untested in this project**.
+driver. HDMI and USB-C as the control link should work the same and are
+**untested in this project**.
 
 One difference worth knowing: over DisplayPort and USB-C the I2C lines are
 multiplexed onto the AUX channel, while over HDMI and DVI they sit on dedicated
