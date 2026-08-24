@@ -78,6 +78,10 @@ sudo usermod -aG i2c "$USER"    # then reboot: the systemd --user manager does
                                 # not pick up group changes without one
 ```
 
+Also check that **DDC/CI is enabled in the monitor's own menu**. The R45w-30
+ships with it on, but plenty of monitors do not, and nothing here can work until
+it is. `ddcutil detect` finding no displays is the usual symptom.
+
 ### From the terminal
 
 ```bash
@@ -361,6 +365,32 @@ The only prior work we found on this model is
 ControlMyMonitor scripts to toggle PBP. It agrees with our findings on `0xF5`
 and `0x60`, and it is what prompted us to re-test three registers we had
 dismissed using the wrong values.
+
+---
+
+## Disclaimer
+
+This is a personal project, built for one monitor on one desk and published in
+case it saves somebody else the work. It is **not affiliated with or endorsed
+by Lenovo**.
+
+Most of what makes it useful — the window layout, the source of each window,
+the built-in KVM — lives in manufacturer-reserved registers (`0xE0`–`0xFF`) that
+no standard describes. Everything in [`REGISTERS.md`](REGISTERS.md) was worked
+out by experiment against a single unit: product code `0x67b1`, firmware
+`0x0101`. So:
+
+- **A firmware update can change or break any of it.** These registers carry no
+  compatibility promise, because they were never published to begin with.
+- **Other monitors will differ**, other Lenovo models included. See
+  [Using this on a different monitor](#using-this-on-a-different-monitor).
+- **Writing a register you have not identified can leave the monitor somewhere
+  you did not intend.** That is not hypothetical here: `0xF6` locks the
+  monitor's controls, and it was found by writing it. `tools/ddc-snap` exists to
+  go looking, so read [The four traps in this monitor](#the-four-traps-in-this-monitor)
+  before pointing it at anything.
+
+Use it at your own risk. It is provided as-is, with no warranty of any kind.
 
 ---
 
