@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+
+# Working material from mapping the monitor: raw dumps and the scripts used to
+# produce them. Kept on disk, out of the repository - it is the trail of how the
+# register map was found, not something a user of the project needs. What it
+# produced lives in REGISTERS.md, and the primary sources in reference/.
+data/
+windows-insights/

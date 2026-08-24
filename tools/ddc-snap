@@ -1,0 +1,185 @@
+#!/usr/bin/env bash
+#
+# ddc-snap - dump and diff the VCP registers of a Lenovo Legion R45w-30.
+#
+# Mapping method:   snap  ->  change ONE thing in the OSD  ->  snap  ->  diff
+# Whatever moves in the diff is the register that controls that setting.
+#
+#   ddc-snap snap [label]     take a timestamped dump
+#   ddc-snap diff [A] [B]     compare two dumps (defaults to the last two)
+#   ddc-snap ls               list existing dumps
+#   ddc-snap check            re-verify which codes are readable and which echo
+#
+# Behaviour measured on this monitor, which shapes the whole script:
+#
+#  - ddcutil SORTS feature codes ascending and ignores the order you ask for.
+#    You cannot control the read sequence through arguments.
+#  - Cost is per invocation, not per feature: one feature ~1.0 s, all ~39 in a
+#    single call ~4.4 s. Hence one batched read.
+#  - 0xF0, 0xF7 and 0xFA return the PREVIOUS feature's answer instead of a value
+#    of their own; 0xA4, 0xF8 and 0xFB error out. None of the six is dumped:
+#    they would produce phantom changes in every diff.
+#  - The I2C bus does not tolerate concurrency - hence flock.
+
+set -uo pipefail
+
+DISPLAY_NUM="${DDC_DISPLAY:-1}"
+BASE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SNAPDIR="${DDC_SNAPDIR:-$BASE/data/snapshots}"
+LOCK="${DDC_LOCK:-${XDG_RUNTIME_DIR:-/tmp}/r45w.lock}"
+
+# Readable, stable features. These are what the diff compares.
+STABLE="0x0B 0x0C 0x10 0x12 0x14 0x16 0x18 0x1A 0x60 0x72 0x86 0x87 \
+0x95 0x96 0x97 0x98 0xA5 0xB2 0xB6 0xC6 0xC8 0xC9 0xCA 0xCC 0xD6 0xDF \
+0xE0 0xEA 0xEB 0xEC 0xED 0xEF 0xF2 0xF4 0xF5 0xF6 0xF9 0xFC 0xFD 0x62"
+
+# Read but excluded from the diff: these change on their own and mean nothing
+# for mapping. 0x02 is a self-clearing flag, 0x52 the active control, 0xAC/0xAE
+# the timing of the current video mode.
+VOLATILE="0x02 0x52 0xAC 0xAE"
+
+name_of() {
+  case "${1^^}" in
+    0B) echo "Color temperature increment" ;;
+    0C) echo "Color temperature request" ;;
+    10) echo "Brightness" ;;      12) echo "Contrast" ;;
+    14) echo "Color preset" ;;    16) echo "Red gain" ;;
+    18) echo "Green gain" ;;      1A) echo "Blue gain" ;;
+    60) echo "INPUT - both windows (high=right, low=left)" ;;
+    62) echo "Speaker volume" ;;  72) echo "Gamma (value in HIGH byte)" ;;
+    86) echo "Scaling" ;;         87) echo "Sharpness" ;;
+    95) echo "Window TL_X" ;;     96) echo "Window TL_Y" ;;
+    97) echo "Window BR_X" ;;     98) echo "Window BR_Y" ;;
+    A5) echo "Window select" ;;   B2) echo "Subpixel layout" ;;
+    B6) echo "Panel technology" ;; C6) echo "Application enable key" ;;
+    C8) echo "Controller type" ;; C9) echo "Firmware version" ;;
+    CA) echo "OSD / buttons" ;;   CC) echo "OSD language" ;;
+    D6) echo "Power mode" ;;      DF) echo "VCP version" ;;
+    E0) echo "Over Drive" ;;      EA) echo "Dynamic contrast" ;;
+    EC) echo "USB charging" ;;    ED) echo "KVM state (read only)" ;;
+    EF) echo "HDR" ;;             F2) echo "Swap windows / PBP off" ;;
+    F4) echo "LAYOUT STATE (high=mode, low=swap)" ;;
+    F5) echo "LAYOUT (high=ratio, low=on/off)" ;;
+    F6) echo "MONITOR LOCK - do not write" ;;
+    F9) echo "Picture mode" ;;
+    *)  echo "vendor specific - unidentified" ;;
+  esac
+}
+
+# Serialise: the I2C bus cannot take two ddcutil calls at once.
+ddc() { flock "$LOCK" ddcutil --syslog NEVER -d "$DISPLAY_NUM" "$@"; }
+
+cmd_snap() {
+  local label="${1:-unlabelled}"
+  local ts; ts=$(date +%Y-%m-%dT%H%M%S)
+  local out="$SNAPDIR/${ts}-${label}.txt"
+  mkdir -p "$SNAPDIR"
+
+  # `detect` takes no -d, and the bus number changes between boots
+  # (i2c-9 one day, i2c-11 the next). Never hardcode the path.
+  local ident
+  ident=$(flock "$LOCK" ddcutil --syslog NEVER detect --terse 2>/dev/null \
+          | grep -E 'I2C bus|connector:|Monitor:' | tr -s ' ' | paste -sd'|')
+  if [ -z "$ident" ]; then
+    echo "ddc-snap: the monitor is not answering. Powered on and awake?" >&2
+    return 1
+  fi
+
+  {
+    echo "# ddc-snap $(date --iso-8601=seconds)"
+    echo "# label: $label"
+    echo "# $ident"
+    echo "#"
+    echo "# excluded as unreadable: 0xF0 0xF7 0xFA (echo), 0xA4 0xF8 0xFB (error)"
+    echo "#"
+  } > "$out"
+
+  # One invocation for everything: the cost is the process, not the features.
+  ddc getvcp --terse $STABLE 2>/dev/null | grep '^VCP ' >> "$out"
+
+  { echo "#"; echo "# --- volatile, excluded from the diff ---"; } >> "$out"
+  ddc getvcp --terse $VOLATILE 2>/dev/null | grep '^VCP ' | sed 's/^/#V /' >> "$out"
+
+  local n; n=$(grep -c '^VCP ' "$out")
+  echo "$out"
+  echo "  $n stable features recorded."
+  [ "$n" -lt 30 ] && echo "  WARNING: expected ~40. Incomplete read, take it again." >&2
+  return 0
+}
+
+cmd_ls() {
+  mkdir -p "$SNAPDIR"
+  local n; n=$(ls -1 "$SNAPDIR"/*.txt 2>/dev/null | wc -l)
+  [ "$n" -eq 0 ] && { echo "No dumps yet. Start with: ddc-snap snap <label>"; return 0; }
+  for f in "$SNAPDIR"/*.txt; do
+    printf "%-52s %s features\n" "$(basename "$f")" "$(grep -c '^VCP ' "$f")"
+  done
+}
+
+cmd_diff() {
+  mkdir -p "$SNAPDIR"
+  local a b
+  if [ $# -ge 2 ]; then a="$1"; b="$2"
+  else
+    mapfile -t last < <(ls -1 "$SNAPDIR"/*.txt 2>/dev/null | tail -2)
+    [ "${#last[@]}" -lt 2 ] && { echo "Need at least two dumps." >&2; return 1; }
+    a="${last[0]}"; b="${last[1]}"
+  fi
+  [ -f "$a" ] || a="$SNAPDIR/$a"; [ -f "$b" ] || b="$SNAPDIR/$b"
+  [ -f "$a" ] && [ -f "$b" ] || { echo "Cannot find those dumps." >&2; return 1; }
+
+  echo "A: $(basename "$a")   $(grep '^# label:' "$a" | cut -d: -f2-)"
+  echo "B: $(basename "$b")   $(grep '^# label:' "$b" | cut -d: -f2-)"
+  echo
+
+  local changes=0
+  while read -r code; do
+    local va vb
+    va=$(grep "^VCP $code " "$a" | cut -d' ' -f3-)
+    vb=$(grep "^VCP $code " "$b" | cut -d' ' -f3-)
+    if [ "$va" != "$vb" ]; then
+      changes=$((changes+1))
+      printf "  0x%s  %s\n" "${code,,}" "$(name_of "$code")"
+      printf "        A: %s\n        B: %s\n" "${va:-<absent>}" "${vb:-<absent>}"
+    fi
+  done < <(cat "$a" "$b" | grep '^VCP ' | awk '{print $2}' | sort -u)
+
+  if [ "$changes" -eq 0 ]; then
+    echo "  No changes. If you did change something in the OSD, that setting is"
+    echo "  not exposed over DDC/CI, or it lives behind the 0xF8 index mechanism,"
+    echo "  or in one of the unreadable codes."
+  else
+    echo
+    echo "  $changes register(s) changed."
+  fi
+}
+
+# Re-verify the readable/echo classification. A code "echoes" when its value
+# depends on what was read just before it. Only valid for codes above 0x60,
+# since both probes must be numerically lower - ddcutil sorts ascending.
+cmd_check() {
+  echo "Probe A: 0x10 (brightness)   Probe B: 0x60 (input)"
+  echo
+  local suspects="0x95 0x96 0x97 0x98 0xA4 0xA5 0xE0 0xEA 0xEB 0xEC 0xED 0xEF \
+0xF0 0xF2 0xF4 0xF5 0xF6 0xF7 0xF8 0xF9 0xFA 0xFB 0xFC 0xFD"
+  local c va vb
+  for c in $suspects; do
+    va=$(ddc getvcp --terse 0x10 "$c" 2>/dev/null | tail -1 | cut -d' ' -f3-)
+    vb=$(ddc getvcp --terse 0x60 "$c" 2>/dev/null | tail -1 | cut -d' ' -f3-)
+    if [ -z "$va" ] || [[ "$va" == *ERR* ]]; then
+      printf "  %-6s ERROR     not readable\n" "$c"
+    elif [ "$va" = "$vb" ]; then
+      printf "  %-6s READABLE  %s\n" "$c" "$va"
+    else
+      printf "  %-6s ECHO      returns the previous answer - useless\n" "$c"
+    fi
+  done
+}
+
+case "${1:-}" in
+  snap)  shift; cmd_snap "$@" ;;
+  diff)  shift; cmd_diff "$@" ;;
+  ls)    cmd_ls ;;
+  check) cmd_check ;;
+  *)     sed -n '3,14p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//' ;;
+esac

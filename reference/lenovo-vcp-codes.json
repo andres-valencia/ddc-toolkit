@@ -1,0 +1,3336 @@
+{
+	"hash" : "d83daf48276b70138a1b8ca14a77d417de1d63157cecd5034e293577a3df7677",
+	"version" : "1.7",
+	"data" : 
+	{
+		"model" : "*",
+    "vcpCodesDef": [
+      {
+        "code": "0xE0",
+        "name": "Over Drive",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Normal"
+              },
+              {
+                "value": "0x02",
+                "define": "Extreme"
+              },
+              {
+                "value": "0x03",
+                "define": "Level 1"
+              },
+              {
+                "value": "0x04",
+                "define": "Level 2"
+              },
+              {
+                "value": "0x05",
+                "define": "Level 3"
+              },
+              {
+                "value": "0x06",
+                "define": "Level 4"
+              },
+              {
+                "value": "0x07",
+                "define": "Level 5"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xEA",
+        "name": "Dynamic Contrast Ratio",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xEB",
+        "name": "Color/Scenario Active State/Game Mode",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Scenario Mode"
+              },
+              {
+                "value": "0x01",
+                "define": "Color Preset"
+              },
+              {
+                "value": "0x02",
+                "define": "Game Mode"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xEC",
+        "name": "USB Charge",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "off"
+              },
+              {
+                "value": "0x01",
+                "define": "on"
+              }
+            ]
+          },
+          {
+            "argsPlaceholder": 2,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Auto"
+              },
+              {
+                "value": "0x01",
+                "define": "Minimum"
+              },
+              {
+                "value": "0x02",
+                "define": "Extreme"
+              },
+              {
+                "value": "0x03",
+                "define": "Off"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xED",
+        "name": "USB-C Source/Speed",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x31",
+                "define": "USB-C 1"
+              },
+              {
+                "value": "0x32",
+                "define": "USB-C 2"
+              },
+              {
+                "value": "0x33",
+                "define": "USB-C 3"
+              },
+              {
+                "value": "0x34",
+                "define": "USB-C 4"
+              },
+              {
+                "value": "0x35",
+                "define": "USB-C 5"
+              },
+              {
+                "value": "0x36",
+                "define": "USB-C 6"
+              },
+              {
+                "value": "0x37",
+                "define": "USB-C 7"
+              },
+              {
+                "value": "0x38",
+                "define": "USB-C 8"
+              },
+              {
+                "value": "0x39",
+                "define": "USB-C 9"
+              },
+              {
+                "value": "0x3A",
+                "define": "USB-C 10"
+              },
+              {
+                "value": "0x3B",
+                "define": "USB-C 11"
+              },
+              {
+                "value": "0x3C",
+                "define": "USB-C 12"
+              },
+              {
+                "value": "0x3D",
+                "define": "USB-C 13"
+              },
+              {
+                "value": "0x3E",
+                "define": "USB-C 14"
+              },
+              {
+                "value": "0x3F",
+                "define": "USB-C 15"
+              },
+              {
+                "value": "0x51",
+                "define": "USB-B 1"
+              },
+              {
+                "value": "0x52",
+                "define": "USB-B 2"
+              },
+              {
+                "value": "0x53",
+                "define": "USB-B 3"
+              },
+              {
+                "value": "0x54",
+                "define": "USB-B 4"
+              },
+              {
+                "value": "0x55",
+                "define": "USB-B 5"
+              },
+              {
+                "value": "0x56",
+                "define": "USB-B 6"
+              },
+              {
+                "value": "0x57",
+                "define": "USB-B 7"
+              },
+              {
+                "value": "0x58",
+                "define": "USB-B 8"
+              },
+              {
+                "value": "0x59",
+                "define": "USB-B 9"
+              },
+              {
+                "value": "0x5A",
+                "define": "USB-B 10"
+              },
+              {
+                "value": "0x5B",
+                "define": "USB-B 11"
+              },
+              {
+                "value": "0x5C",
+                "define": "USB-B 12"
+              },
+              {
+                "value": "0x5D",
+                "define": "USB-B 13"
+              },
+              {
+                "value": "0x5E",
+                "define": "USB-B 14"
+              },
+              {
+                "value": "0x5F",
+                "define": "USB-B 15"
+              }
+            ]
+          },
+          {
+            "argsPlaceholder": 2,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "USB 3.1"
+              },
+              {
+                "value": "0x01",
+                "define": "USB 2.0"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xEF",
+        "name": "HDR",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Auto"
+              },
+              {
+                "value": "0x02",
+                "define": "HDR1000"
+              },
+              {
+                "value": "0x03",
+                "define": "HLG"
+              },
+              {
+                "value": "0x04",
+                "define": "Dolby Vision"
+              },
+              {
+                "value": "0x05",
+                "define": "HDR"
+              },
+              {
+                "value": "0x06",
+                "define": "HDR400"
+              },
+              {
+                "value": "0x07",
+                "define": "HDR Game"
+              },
+              {
+                "value": "0x08",
+                "define": "HDR Movie"
+              },
+              {
+                "value": "0x09",
+                "define": "HDR Photo"
+              },
+			  {
+                "value": "0x0A",
+                "define": "Dolby Vision Bright"
+              },
+			  {
+                "value": "0x0B",
+                "define": "Dolby Vision Dark"
+              },
+			  {
+                "value": "0x0C",
+                "define": "HDR10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF0",
+        "name": "Audio Source",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x11",
+                "define": "HDMI1"
+              },
+              {
+                "value": "0x12",
+                "define": "HDMI2"
+              },
+              {
+                "value": "0x13",
+                "define": "HDMI3"
+              },
+              {
+                "value": "0x14",
+                "define": "HDMI4"
+              },
+              {
+                "value": "0x15",
+                "define": "HDMI5"
+              },
+              {
+                "value": "0x16",
+                "define": "HDMI6"
+              },
+              {
+                "value": "0x17",
+                "define": "HDMI7"
+              },
+              {
+                "value": "0x18",
+                "define": "HDMI8"
+              },
+              {
+                "value": "0x19",
+                "define": "HDMI9"
+              },
+              {
+                "value": "0x1A",
+                "define": "HDMI10"
+              },
+              {
+                "value": "0x1B",
+                "define": "HDMI11"
+              },
+              {
+                "value": "0x1C",
+                "define": "HDMI12"
+              },
+              {
+                "value": "0x1D",
+                "define": "HDMI13"
+              },
+              {
+                "value": "0x1E",
+                "define": "HDMI14"
+              },
+              {
+                "value": "0x1F",
+                "define": "HDMI15"
+              },
+              {
+                "value": "0x0F",
+                "define": "DP1"
+              },
+              {
+                "value": "0x10",
+                "define": "DP2"
+              },
+              {
+                "value": "0x21",
+                "define": "DP3"
+              },
+              {
+                "value": "0x22",
+                "define": "DP4"
+              },
+              {
+                "value": "0x23",
+                "define": "DP5"
+              },
+              {
+                "value": "0x24",
+                "define": "DP6"
+              },
+              {
+                "value": "0x25",
+                "define": "DP7"
+              },
+              {
+                "value": "0x26",
+                "define": "DP8"
+              },
+              {
+                "value": "0x27",
+                "define": "DP9"
+              },
+              {
+                "value": "0x28",
+                "define": "DP10"
+              },
+              {
+                "value": "0x29",
+                "define": "DP11"
+              },
+              {
+                "value": "0x2A",
+                "define": "DP12"
+              },
+              {
+                "value": "0x2B",
+                "define": "DP13"
+              },
+              {
+                "value": "0x2C",
+                "define": "DP14"
+              },
+              {
+                "value": "0x2D",
+                "define": "DP15"
+              },
+              {
+                "value": "0x2E",
+                "define": "DP16"
+              },
+              {
+                "value": "0x2F",
+                "define": "DP17"
+              },
+              {
+                "value": "0x31",
+                "define": "USB-C1"
+              },
+              {
+                "value": "0x32",
+                "define": "USB-C2"
+              },
+              {
+                "value": "0x33",
+                "define": "USB-C3"
+              },
+              {
+                "value": "0x34",
+                "define": "USB-C4"
+              },
+              {
+                "value": "0x35",
+                "define": "USB-C5"
+              },
+              {
+                "value": "0x36",
+                "define": "USB-C6"
+              },
+              {
+                "value": "0x37",
+                "define": "USB-C7"
+              },
+              {
+                "value": "0x38",
+                "define": "USB-C8"
+              },
+              {
+                "value": "0x39",
+                "define": "USB-C9"
+              },
+              {
+                "value": "0x3A",
+                "define": "USB-C10"
+              },
+              {
+                "value": "0x3B",
+                "define": "USB-C11"
+              },
+              {
+                "value": "0x3C",
+                "define": "USB-C12"
+              },
+              {
+                "value": "0x3D",
+                "define": "USB-C13"
+              },
+              {
+                "value": "0x3E",
+                "define": "USB-C14"
+              },
+              {
+                "value": "0x3F",
+                "define": "USB-C15"
+              },
+              {
+                "value": "0xFE",
+                "define": "Auto"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF1",
+        "name": "Color Preset for PIP/PBP",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x01",
+                "define": "sRGB"
+              },
+              {
+                "value": "0x02",
+                "define": "Display Native"
+              },
+              {
+                "value": "0x05",
+                "define": "Reddish(6500K)"
+              },
+              {
+                "value": "0x06",
+                "define": "Neutral(7500K)"
+              },
+              {
+                "value": "0x08",
+                "define": "Bluish(9300K)"
+              },
+              {
+                "value": "0x0B",
+                "define": "Custom 1"
+              },
+              {
+                "value": "0x0C",
+                "define": "Custom 2"
+              },
+              {
+                "value": "0x0D",
+                "define": "Custom 3"
+              },
+              {
+                "value": "0x0E",
+                "define": "BT.709"
+              },
+              {
+                "value": "0x0F",
+                "define": "DCI-P3"
+              },
+              {
+                "value": "0x10",
+                "define": "BT.2020"
+              },
+              {
+                "value": "0x11",
+                "define": "Adobe RGB (P32u)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF2",
+        "name": "PIP/PBP Swap",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Disable PIP/PBP window"
+              },
+              {
+                "value": "0x01",
+                "define": "Swap source"
+              },
+              {
+                "value": "0x03",
+                "define": "Turns off full screen mode"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF4",
+        "name": "PIP Size",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "min"
+              },
+              {
+                "value": "0x64",
+                "define": "max"
+              }
+            ]
+          }
+
+        ]
+      },
+      {
+        "code": "0xF5",
+        "name": "PBP Control",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Right"
+              },
+              {
+                "value": "0x02",
+                "define": "Left"
+              },
+              {
+                "value": "0x03",
+                "define": "Top"
+              },
+              {
+                "value": "0x04",
+                "define": "Bottom"
+              }
+            ]
+          },
+          {
+            "argsPlaceholder": 2,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "1:1"
+              },
+              {
+                "value": "0x02",
+                "define": "2:1"
+              },
+              {
+                "value": "0x03",
+                "define": "1:2"
+              },
+              {
+                "value": "0x04",
+                "define": "3:1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF6",
+        "name": "Lock Monitor",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDefForBits": [
+              {
+                "bitStart": 0,
+                "bitEnd": 0,
+                "value": "0x00",
+                "define": "unlock display"
+              },
+              {
+                "bitStart": 0,
+                "bitEnd": 0,
+                "value": "0x01",
+                "define": "lock display"
+              },
+              {
+                "bitStart": 1,
+                "bitEnd": 1,
+                "value": "0x00",
+                "define": "unlock OSD"
+              },
+              {
+                "bitStart": 1,
+                "bitEnd": 1,
+                "value": "0x01",
+                "define": "lock OSD"
+              },
+              {
+                "bitStart": 2,
+                "bitEnd": 2,
+                "value": "0x00",
+                "define": "unlock USB"
+              },
+              {
+                "bitStart": 2,
+                "bitEnd": 2,
+                "value": "0x01",
+                "define": "lock USB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x01"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "no sync"
+              },
+              {
+                "value": "0x01",
+                "define": "Free Sync"
+              },
+              {
+                "value": "0x02",
+                "define": "G-sync"
+              },
+              {
+                "value": "0x03",
+                "define": "G-sync compatible"
+              },
+              {
+                "value": "0x04",
+                "define": "FreeSync+G-Sync Compatible"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x02"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x03"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "off"
+              },
+              {
+                "value": "0x01",
+                "define": "auto"
+              },
+              {
+                "value": "0x02",
+                "define": "busy(red)"
+              },
+              {
+                "value": "0x03",
+                "define": "free(green)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x04"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x05"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "off"
+              },
+              {
+                "value": "0x01",
+                "define": "on"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x06"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              },
+              {
+                "value": "0x02",
+                "define": "Auto"
+              },
+              {
+                "value": "0x03",
+                "define": "DisplayPort"
+              },
+              {
+                "value": "0x04",
+                "define": "USB-C"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x07"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "disabled"
+              },
+              {
+                "value": "0x01",
+                "define": "enabled"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0107"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0207"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x08"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "reserved"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x09"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "reserved"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0109"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0209"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Normal"
+              },
+              {
+                "value": "0x02",
+                "define": "Extreme"
+              },
+              {
+                "value": "0x03",
+                "define": "Level 1"
+              },
+              {
+                "value": "0x04",
+                "define": "Level 2"
+              },
+              {
+                "value": "0x05",
+                "define": "Level 3"
+              },
+              {
+                "value": "0x06",
+                "define": "Level 4"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0309"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0409"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Normal"
+              },
+              {
+                "value": "0x02",
+                "define": "Extreme"
+              },
+              {
+                "value": "0x03",
+                "define": "Level 1"
+              },
+              {
+                "value": "0x04",
+                "define": "Level 2"
+              },
+              {
+                "value": "0x05",
+                "define": "Level 3"
+              },
+              {
+                "value": "0x06",
+                "define": "Level 4"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0A"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "reserved"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x010A"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x020A"
+        },
+       "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Normal"
+              },
+              {
+                "value": "0x02",
+                "define": "Extreme"
+              },
+              {
+                "value": "0x03",
+                "define": "Level 1"
+              },
+              {
+                "value": "0x04",
+                "define": "Level 2"
+              },
+              {
+                "value": "0x05",
+                "define": "Level 3"
+              },
+              {
+                "value": "0x06",
+                "define": "Level 4"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x030A"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x040A"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Normal"
+              },
+              {
+                "value": "0x02",
+                "define": "Extreme"
+              },
+              {
+                "value": "0x03",
+                "define": "Level 1"
+              },
+              {
+                "value": "0x04",
+                "define": "Level 2"
+              },
+              {
+                "value": "0x05",
+                "define": "Level 3"
+              },
+              {
+                "value": "0x06",
+                "define": "Level 4"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0B"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+			  {
+                "value": "0x02",
+                "define": "DP1.1"
+              },
+              {
+                "value": "0x00",
+                "define": "DP1.2"
+              },
+              {
+                "value": "0x01",
+                "define": "DP1.4"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0C"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "USB2.0"
+              },
+              {
+                "value": "0x01",
+                "define": "USB3.0"
+              },
+              {
+                "value": "0x02",
+                "define": "USB3.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0E"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x0F"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x10"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x11"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x12"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x13"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x14"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              },
+              {
+                "value": "0x02",
+                "define": "Keyboard On"
+              },
+              {
+                "value": "0x03",
+                "define": "Mouse On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x15"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x16"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x17"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x18"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x19"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x1A"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x1B"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x1C"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x1D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "Breathing"
+              },
+              {
+                "value": "0x02",
+                "define": "Flashing"
+              },
+              {
+                "value": "0x03",
+                "define": "Marquee"
+              },
+              {
+                "value": "0x04",
+                "define": "Rainbow wave"
+              },
+              {
+                "value": "0x05",
+                "define": "Fireworks"
+              },
+              {
+                "value": "0x06",
+                "define": "Starry Sky"
+              },
+              {
+                "value": "0x07",
+                "define": "Rhythm "
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x011D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x021D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x021D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x041D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "default"
+              },
+              {
+                "value": "0x01",
+                "define": "specified "
+              },
+              {
+                "value": "0x02",
+                "define": "random"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x051D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x061D"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xF7",
+        "name": "Monitor Features",
+        "modelArgType": "NC",
+        "extendData": {
+          "featureIndex": "0x1E"
+        },
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Off"
+              },
+              {
+                "value": "0x01",
+                "define": "On"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF8",
+        "name": "Monitor Feature Index",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "reserved"
+              },
+              {
+                "value": "0x01",
+                "define": "Sync technology"
+              },
+              {
+                "value": "0x02",
+                "define": "Monitor size"
+              },
+              {
+                "value": "0x03",
+                "define": "Traffic light"
+              },
+              {
+                "value": "0x04",
+                "define": "Charge power"
+              },
+              {
+                "value": "0x05",
+                "define": "Smart energy"
+              },
+              {
+                "value": "0x06",
+                "define": "Daisy Chain"
+              },
+              {
+                "value": "0x07",
+                "define": "Disable/Enable KVM binding"
+              },
+              {
+                "value": "0x0107",
+                "define": "Set video source and USB source for PC1"
+              },
+              {
+                "value": "0x0207",
+                "define": "Set video source and USB source for PC2"
+              },
+              {
+                "value": "0x08",
+                "define": "Switch KVM"
+              },
+              {
+                "value": "0x09",
+                "define": "Reserved"
+              },
+              {
+                "value": "0x0109",
+                "define": "Set contrast and brightness for Game1"
+              },
+              {
+                "value": "0x0209",
+                "define": "Set overdrive and saturation for Game1"
+              },
+			  {
+                "value": "0x0309",
+                "define": "Set gamma for Game1"
+              },
+			  {
+                "value": "0x0409",
+                "define": "Set overdrive for Game1"
+              },
+              {
+                "value": "0x0A",
+                "define": "Reserved"
+              },
+              {
+                "value": "0x010A",
+                "define": "Set contrast and brightness for scenario mode Game2"
+              },
+              {
+                "value": "0x020A",
+                "define": "Set overdrive and saturation for scenario mode Game2"
+              },
+			  {
+                "value": "0x030A",
+                "define": "Set gamma for Game2"
+              },
+			  {
+                "value": "0x040A",
+                "define": "Set overdrive for Game2"
+              },
+              {
+                "value": "0x0B",
+                "define": "DP Select"
+              },
+              {
+                "value": "0x0C",
+                "define": "Energy Saving Mode"
+              },
+              {
+                "value": "0x0D",
+                "define": "USB Select"
+              },
+              {
+                "value": "0x0E",
+                "define": "Smart Audio"
+              },
+              {
+                "value": "0x0F",
+                "define": "Face Tracking"
+              },
+              {
+                "value": "0x10",
+                "define": "Auto-alarm"
+              },
+              {
+                "value": "0x11",
+                "define": "Waken on Touch"
+              },
+              {
+                "value": "0x12",
+                "define": "vPro"
+              },
+              {
+                "value": "0x13",
+                "define": "Smart Light"
+              },
+              {
+                "value": "0x14",
+                "define": "eKVM"
+              },
+              {
+                "value": "0x15",
+                "define": "True Split"
+              },
+              {
+                "value": "0x16",
+                "define": "Lan Indicator"
+              },
+              {
+                "value": "0x17",
+                "define": "Audio Smart Switch"
+              },
+              {
+                "value": "0x18",
+                "define": "Light Control"
+              },
+              {
+                "value": "0x19",
+                "define": "Light Control Range"
+              },
+              {
+                "value": "0x1A",
+                "define": "Overclock"
+              },
+              {
+                "value": "0x1B",
+                "define": "Touch Enablement"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xF9",
+        "name": "Game Mode",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Game Mode off"
+              },
+              {
+                "value": "0x01",
+                "define": "FPS1"
+              },
+              {
+                "value": "0x02",
+                "define": "FPS2"
+              },
+              {
+                "value": "0x03",
+                "define": "RCG"
+              },
+              {
+                "value": "0x04",
+                "define": "RTS"
+              },
+              {
+                "value": "0x05",
+                "define": "Game 1"
+              },
+              {
+                "value": "0x06",
+                "define": "Game 2"
+              },
+              {
+                "value": "0x07",
+                "define": "MOBA"
+              },
+              {
+                "value": "0x08",
+                "define": "ACT"
+              },
+              {
+                "value": "0x09",
+                "define": "RPG"
+              },
+              {
+                "value": "0x0A",
+                "define": "Standard"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xFA",
+        "name": "Mutex Test",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xFB",
+        "name": "Gaming Dashboard Control 1",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xFC",
+        "name": "Gaming Dashboard Control 2",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+	  {
+        "code": "0xFD",
+        "name": "Read Hardware ID",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 15,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0x14",
+        "name": "Color Preset",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x01",
+                "define": "sRGB"
+              },
+              {
+                "value": "0x02",
+                "define": "Display Native"
+              },
+              {
+                "value": "0x05",
+                "define": "Reddish(6500K)"
+              },
+              {
+                "value": "0x06",
+                "define": "Neutral(7500K)"
+              },
+              {
+                "value": "0x08",
+                "define": "Bluish(9300K)"
+              },
+              {
+                "value": "0x0B",
+                "define": "Custom 1"
+              },
+              {
+                "value": "0x0C",
+                "define": "Custom 2"
+              },
+              {
+                "value": "0x0D",
+                "define": "Custom 3"
+              },
+              {
+                "value": "0x0E",
+                "define": "BT.709"
+              },
+              {
+                "value": "0x0F",
+                "define": "DCI-P3"
+              },
+              {
+                "value": "0x10",
+                "define": "BT.2020"
+              },
+              {
+                "value": "0x11",
+                "define": "Adobe RGB (P32u)"
+              },
+              {
+                "value": "0x12",
+                "define": "Low Blue Light"
+              },
+              {
+                "value": "0x13",
+                "define": "DICOM"
+              }				  
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x60",
+        "name": "Input Source",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x11",
+                "define": "HDMI1"
+              },
+              {
+                "value": "0x12",
+                "define": "HDMI2"
+              },
+              {
+                "value": "0x13",
+                "define": "HDMI3"
+              },
+              {
+                "value": "0x14",
+                "define": "HDMI4"
+              },
+              {
+                "value": "0x15",
+                "define": "HDMI5"
+              },
+              {
+                "value": "0x16",
+                "define": "HDMI6"
+              },
+              {
+                "value": "0x17",
+                "define": "HDMI7"
+              },
+              {
+                "value": "0x18",
+                "define": "HDMI8"
+              },
+              {
+                "value": "0x19",
+                "define": "HDMI9"
+              },
+              {
+                "value": "0x1A",
+                "define": "HDMI10"
+              },
+              {
+                "value": "0x1B",
+                "define": "HDMI11"
+              },
+              {
+                "value": "0x1C",
+                "define": "HDMI12"
+              },
+              {
+                "value": "0x1D",
+                "define": "HDMI13"
+              },
+              {
+                "value": "0x1E",
+                "define": "HDMI14"
+              },
+              {
+                "value": "0x1F",
+                "define": "HDMI15"
+              },
+              {
+                "value": "0x0F",
+                "define": "DP1"
+              },
+              {
+                "value": "0x10",
+                "define": "DP2"
+              },
+              {
+                "value": "0x21",
+                "define": "DP3"
+              },
+              {
+                "value": "0x22",
+                "define": "DP4"
+              },
+              {
+                "value": "0x23",
+                "define": "DP5"
+              },
+              {
+                "value": "0x24",
+                "define": "DP6"
+              },
+              {
+                "value": "0x25",
+                "define": "DP7"
+              },
+              {
+                "value": "0x26",
+                "define": "DP8"
+              },
+              {
+                "value": "0x27",
+                "define": "DP9"
+              },
+              {
+                "value": "0x28",
+                "define": "DP10"
+              },
+              {
+                "value": "0x29",
+                "define": "DP11"
+              },
+              {
+                "value": "0x2A",
+                "define": "DP12"
+              },
+              {
+                "value": "0x2B",
+                "define": "DP13"
+              },
+              {
+                "value": "0x2C",
+                "define": "DP14"
+              },
+              {
+                "value": "0x2D",
+                "define": "DP15"
+              },
+              {
+                "value": "0x2E",
+                "define": "DP16"
+              },
+              {
+                "value": "0x2F",
+                "define": "DP17"
+              },
+              {
+                "value": "0x31",
+                "define": "USB-C1"
+              },
+              {
+                "value": "0x32",
+                "define": "USB-C2"
+              },
+              {
+                "value": "0x33",
+                "define": "USB-C3"
+              },
+              {
+                "value": "0x34",
+                "define": "USB-C4"
+              },
+              {
+                "value": "0x35",
+                "define": "USB-C5"
+              },
+              {
+                "value": "0x36",
+                "define": "USB-C6"
+              },
+              {
+                "value": "0x37",
+                "define": "USB-C7"
+              },
+              {
+                "value": "0x38",
+                "define": "USB-C8"
+              },
+              {
+                "value": "0x39",
+                "define": "USB-C9"
+              },
+              {
+                "value": "0x3A",
+                "define": "USB-C10"
+              },
+              {
+                "value": "0x3B",
+                "define": "USB-C11"
+              },
+              {
+                "value": "0x3C",
+                "define": "USB-C12"
+              },
+              {
+                "value": "0x3D",
+                "define": "USB-C13"
+              },
+              {
+                "value": "0x3E",
+                "define": "USB-C14"
+              },
+              {
+                "value": "0x3F",
+                "define": "USB-C15"
+              },
+              {
+                "value": "0x41",
+                "define": "VGA1"
+              },
+              {
+                "value": "0x42",
+                "define": "VGA2"
+              },
+              {
+                "value": "0x43",
+                "define": "VGA3"
+              },
+              {
+                "value": "0x44",
+                "define": "VGA4"
+              },
+              {
+                "value": "0x45",
+                "define": "VGA5"
+              },
+              {
+                "value": "0x46",
+                "define": "VGA6"
+              },
+              {
+                "value": "0x47",
+                "define": "VGA7"
+              },
+              {
+                "value": "0x48",
+                "define": "VGA8"
+              },
+              {
+                "value": "0x49",
+                "define": "VGA9"
+              },
+              {
+                "value": "0x4A",
+                "define": "VGA10"
+              },
+              {
+                "value": "0x4B",
+                "define": "VGA11"
+              },
+              {
+                "value": "0x4C",
+                "define": "VGA12"
+              },
+              {
+                "value": "0x4D",
+                "define": "VGA13"
+              },
+              {
+                "value": "0x4E",
+                "define": "VGA14"
+              },
+              {
+                "value": "0x4F",
+                "define": "VGA15"
+              },
+			  {
+                "value": "0x51",
+                "define": "USB-B1"
+              },
+			  {
+                "value": "0x52",
+                "define": "USB-B2"
+              },
+			  {
+                "value": "0x53",
+                "define": "USB-B3"
+              },
+			  {
+                "value": "0x54",
+                "define": "USB-B4"
+              },
+			  {
+                "value": "0x55",
+                "define": "USB-B5"
+              },
+			  {
+                "value": "0x56",
+                "define": "USB-B6"
+              },
+			  {
+                "value": "0x57",
+                "define": "USB-B7"
+              },
+			  {
+                "value": "0x58",
+                "define": "USB-B8"
+              },
+			  {
+                "value": "0x59",
+                "define": "USB-B9"
+              },
+			  {
+                "value": "0x5A",
+                "define": "USB-B10"
+              },
+			  {
+                "value": "0x5B",
+                "define": "USB-B11"
+              },
+			  {
+                "value": "0x5C",
+                "define": "USB-B12"
+              },
+			  {
+                "value": "0x5D",
+                "define": "USB-B13"
+              },
+			  {
+                "value": "0x5E",
+                "define": "USB-B14"
+              },
+			  {
+                "value": "0x5F",
+                "define": "USB-B15"
+              },
+			  {
+                "value": "0x03",
+                "define": "DVI1"
+              },
+			  {
+                "value": "0x04",
+                "define": "DVI2"
+              },
+			  {
+                "value": "0x61",
+                "define": "DVI3"
+              },
+			  {
+                "value": "0x62",
+                "define": "DVI4"
+              },
+			  {
+                "value": "0x63",
+                "define": "DVI5"
+              },
+			  {
+                "value": "0x64",
+                "define": "DVI6"
+              },
+			  {
+                "value": "0x65",
+                "define": "DVI7"
+              },
+			  {
+                "value": "0x66",
+                "define": "DVI8"
+              },
+			  {
+                "value": "0x67",
+                "define": "DVI9"
+              },
+			  {
+                "value": "0x68",
+                "define": "DVI10"
+              },
+			  {
+                "value": "0x69",
+                "define": "DVI11"
+              },
+			  {
+                "value": "0x6A",
+                "define": "DVI12"
+              },
+			  {
+                "value": "0x6B",
+                "define": "DVI13"
+              },
+			  {
+                "value": "0x6C",
+                "define": "DVI14"
+              },
+			  {
+                "value": "0x6D",
+                "define": "DVI15"
+              },
+			  {
+                "value": "0x6E",
+                "define": "DVI16"
+              },
+			  {
+                "value": "0x6F",
+                "define": "DVI17"
+              },
+              {
+                "value": "0xFE",
+                "define": "Auto"
+              },
+              {
+                "value": "0xE0",
+                "define": "TIO Flex"
+              }
+            ]
+          },
+          {
+            "argsPlaceholder": 2,
+            "argsDef": [
+              {
+                "value": "0x11",
+                "define": "HDMI1"
+              },
+              {
+                "value": "0x12",
+                "define": "HDMI2"
+              },
+              {
+                "value": "0x13",
+                "define": "HDMI3"
+              },
+              {
+                "value": "0x14",
+                "define": "HDMI4"
+              },
+              {
+                "value": "0x15",
+                "define": "HDMI5"
+              },
+              {
+                "value": "0x16",
+                "define": "HDMI6"
+              },
+              {
+                "value": "0x17",
+                "define": "HDMI7"
+              },
+              {
+                "value": "0x18",
+                "define": "HDMI8"
+              },
+              {
+                "value": "0x19",
+                "define": "HDMI9"
+              },
+              {
+                "value": "0x1A",
+                "define": "HDMI10"
+              },
+              {
+                "value": "0x1B",
+                "define": "HDMI11"
+              },
+              {
+                "value": "0x1C",
+                "define": "HDMI12"
+              },
+              {
+                "value": "0x1D",
+                "define": "HDMI13"
+              },
+              {
+                "value": "0x1E",
+                "define": "HDMI14"
+              },
+              {
+                "value": "0x1F",
+                "define": "HDMI15"
+              },
+              {
+                "value": "0x0F",
+                "define": "DP1"
+              },
+              {
+                "value": "0x10",
+                "define": "DP2"
+              },
+              {
+                "value": "0x21",
+                "define": "DP3"
+              },
+              {
+                "value": "0x22",
+                "define": "DP4"
+              },
+              {
+                "value": "0x23",
+                "define": "DP5"
+              },
+              {
+                "value": "0x24",
+                "define": "DP6"
+              },
+              {
+                "value": "0x25",
+                "define": "DP7"
+              },
+              {
+                "value": "0x26",
+                "define": "DP8"
+              },
+              {
+                "value": "0x27",
+                "define": "DP9"
+              },
+              {
+                "value": "0x28",
+                "define": "DP10"
+              },
+              {
+                "value": "0x29",
+                "define": "DP11"
+              },
+              {
+                "value": "0x2A",
+                "define": "DP12"
+              },
+              {
+                "value": "0x2B",
+                "define": "DP13"
+              },
+              {
+                "value": "0x2C",
+                "define": "DP14"
+              },
+              {
+                "value": "0x2D",
+                "define": "DP15"
+              },
+              {
+                "value": "0x2E",
+                "define": "DP16"
+              },
+              {
+                "value": "0x2F",
+                "define": "DP17"
+              },
+              {
+                "value": "0x31",
+                "define": "USB-C1"
+              },
+              {
+                "value": "0x32",
+                "define": "USB-C2"
+              },
+              {
+                "value": "0x33",
+                "define": "USB-C3"
+              },
+              {
+                "value": "0x34",
+                "define": "USB-C4"
+              },
+              {
+                "value": "0x35",
+                "define": "USB-C5"
+              },
+              {
+                "value": "0x36",
+                "define": "USB-C6"
+              },
+              {
+                "value": "0x37",
+                "define": "USB-C7"
+              },
+              {
+                "value": "0x38",
+                "define": "USB-C8"
+              },
+              {
+                "value": "0x39",
+                "define": "USB-C9"
+              },
+              {
+                "value": "0x3A",
+                "define": "USB-C10"
+              },
+              {
+                "value": "0x3B",
+                "define": "USB-C11"
+              },
+              {
+                "value": "0x3C",
+                "define": "USB-C12"
+              },
+              {
+                "value": "0x3D",
+                "define": "USB-C13"
+              },
+              {
+                "value": "0x3E",
+                "define": "USB-C14"
+              },
+              {
+                "value": "0x3F",
+                "define": "USB-C15"
+              },
+              {
+                "value": "0x41",
+                "define": "VGA1"
+              },
+              {
+                "value": "0x42",
+                "define": "VGA2"
+              },
+              {
+                "value": "0x43",
+                "define": "VGA3"
+              },
+              {
+                "value": "0x44",
+                "define": "VGA4"
+              },
+              {
+                "value": "0x45",
+                "define": "VGA5"
+              },
+              {
+                "value": "0x46",
+                "define": "VGA6"
+              },
+              {
+                "value": "0x47",
+                "define": "VGA7"
+              },
+              {
+                "value": "0x48",
+                "define": "VGA8"
+              },
+              {
+                "value": "0x49",
+                "define": "VGA9"
+              },
+              {
+                "value": "0x4A",
+                "define": "VGA10"
+              },
+              {
+                "value": "0x4B",
+                "define": "VGA11"
+              },
+              {
+                "value": "0x4C",
+                "define": "VGA12"
+              },
+              {
+                "value": "0x4D",
+                "define": "VGA13"
+              },
+              {
+                "value": "0x4E",
+                "define": "VGA14"
+              },
+              {
+                "value": "0x4F",
+                "define": "VGA15"
+              },
+			  {
+                "value": "0x51",
+                "define": "USB-B1"
+              },
+			  {
+                "value": "0x52",
+                "define": "USB-B2"
+              },
+			  {
+                "value": "0x53",
+                "define": "USB-B3"
+              },
+			  {
+                "value": "0x54",
+                "define": "USB-B4"
+              },
+			  {
+                "value": "0x55",
+                "define": "USB-B5"
+              },
+			  {
+                "value": "0x56",
+                "define": "USB-B6"
+              },
+			  {
+                "value": "0x57",
+                "define": "USB-B7"
+              },
+			  {
+                "value": "0x58",
+                "define": "USB-B8"
+              },
+			  {
+                "value": "0x59",
+                "define": "USB-B9"
+              },
+			  {
+                "value": "0x5A",
+                "define": "USB-B10"
+              },
+			  {
+                "value": "0x5B",
+                "define": "USB-B11"
+              },
+			  {
+                "value": "0x5C",
+                "define": "USB-B12"
+              },
+			  {
+                "value": "0x5D",
+                "define": "USB-B13"
+              },
+			  {
+                "value": "0x5E",
+                "define": "USB-B14"
+              },
+			  {
+                "value": "0x5F",
+                "define": "USB-B15"
+              },
+			  {
+                "value": "0x03",
+                "define": "DVI1"
+              },
+			  {
+                "value": "0x04",
+                "define": "DVI2"
+              },
+			  {
+                "value": "0x61",
+                "define": "DVI3"
+              },
+			  {
+                "value": "0x62",
+                "define": "DVI4"
+              },
+			  {
+                "value": "0x63",
+                "define": "DVI5"
+              },
+			  {
+                "value": "0x64",
+                "define": "DVI6"
+              },
+			  {
+                "value": "0x65",
+                "define": "DVI7"
+              },
+			  {
+                "value": "0x66",
+                "define": "DVI8"
+              },
+			  {
+                "value": "0x67",
+                "define": "DVI9"
+              },
+			  {
+                "value": "0x68",
+                "define": "DVI10"
+              },
+			  {
+                "value": "0x69",
+                "define": "DVI11"
+              },
+			  {
+                "value": "0x6A",
+                "define": "DVI12"
+              },
+			  {
+                "value": "0x6B",
+                "define": "DVI13"
+              },
+			  {
+                "value": "0x6C",
+                "define": "DVI14"
+              },
+			  {
+                "value": "0x6D",
+                "define": "DVI15"
+              },
+			  {
+                "value": "0x6E",
+                "define": "DVI16"
+              },
+			  {
+                "value": "0x6F",
+                "define": "DVI17"
+              },
+              {
+                "value": "0xFE",
+                "define": "Auto"
+              },
+              {
+                "value": "0xE0",
+                "define": "TIO Flex"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x86",
+        "name": "Display Scaling",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x01",
+                "define": "No scaling"
+              },
+              {
+                "value": "0x02",
+                "define": "Full Screen"
+              },
+              {
+                "value": "0x05",
+                "define": "Original AR"
+              },
+              {
+                "value": "0x0B",
+                "define": "4:3"
+              },
+              {
+                "value": "0x0F",
+                "define": "16:9"
+              },
+              {
+                "value": "0x10",
+                "define": "16:10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xA4",
+        "name": "Window Mask Control",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": [
+              {
+                "value": "0x0000",
+                "define": "Hide"
+              },
+              {
+                "value": "0xFFFF",
+                "define": "Display"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xA5",
+        "name": "Window Select",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": [
+              {
+                "value": "0x0000",
+                "define": "Close PIP, PBP"
+              },
+              {
+                "value": "0x0100",
+                "define": "PIP window"
+              },
+              {
+                "value": "0x0200",
+                "define": "PBP window"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xC6",
+        "name": "Application Enable Key",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": [
+              {
+                "value": "0x0043",
+                "define": "supported"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xDC",
+        "name": "Scenario Mode",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "Panel Native"
+              },
+              {
+                "value": "0x01",
+                "define": "Image Creation"
+              },
+              {
+                "value": "0x03",
+                "define": "Digital Cinema"
+              },
+              {
+                "value": "0x05",
+                "define": "Video Creation"
+              },
+              {
+                "value": "0x06",
+                "define": "Low Blue Light"
+              },
+              {
+                "value": "0x07",
+                "define": "Web Browsing"
+              },
+              {
+                "value": "0x08",
+                "define": "Gaming"
+              },
+              {
+                "value": "0x09",
+                "define": "Professional Image"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x04",
+        "name": "Restore Factory",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x01",
+                "define": "min"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x10",
+        "name": "Brightness",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "min"
+              },
+              {
+                "value": "0x64",
+                "define": "max"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x12",
+        "name": "Contrast",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "min"
+              },
+              {
+                "value": "0x64",
+                "define": "max"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x16",
+        "name": "Red Gain",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "min"
+              },
+              {
+                "value": "0x64",
+                "define": "max"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x18",
+        "name": "Green Gain",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "min"
+              },
+              {
+                "value": "0x64",
+                "define": "max"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x1A",
+        "name": "Blue Gain",
+        "modelArgType": "C",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x00",
+                "define": "min"
+              },
+              {
+                "value": "0x64",
+                "define": "max"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x95",
+        "name": "Window Position TL_X",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0x96",
+        "name": "Window Position TL_Y",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0x97",
+        "name": "Window Position BR_X",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0x98",
+        "name": "Window Position BR_Y",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xD6",
+        "name": "Power Mode",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x01",
+                "define": "Power on"
+              },
+			  {
+                "value": "0x04",
+                "define": "Standby Mode"
+              },
+              {
+                "value": "0x05",
+                "define": "Power off"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0xCC",
+        "name": "Language Select",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 1,
+            "argsDef": [
+              {
+                "value": "0x02",
+                "define": "English"
+              },
+              {
+                "value": "0x03",
+                "define": "French"
+              },
+              {
+                "value": "0x04",
+                "define": "German"
+              },
+              {
+                "value": "0x05",
+                "define": "Italian"
+              },
+              {
+                "value": "0x06",
+                "define": "Japanese"
+              },
+              {
+                "value": "0x09",
+                "define": "Russian"
+              },
+              {
+                "value": "0x0A",
+                "define": "Spanish"
+              },
+              {
+                "value": "0x0D",
+                "define": "Chinese Simplified"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "0x72",
+        "name": "Gamma",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      },
+      {
+        "code": "0xC9",
+        "name": "Firmware Version",
+        "modelArgType": "NC",
+        "modelArgDef": [
+          {
+            "argsPlaceholder": 3,
+            "argsDef": null
+          }
+        ]
+      }
+    ]
+	}
+}

@@ -1,0 +1,23 @@
+[Unit]
+Description=ddc-web - Lenovo R45w-30 control over the local network
+Documentation=https://github.com/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 %h/silvestre-ddc/service/ddc-web.py
+
+# Bind one specific address on purpose. This service has no authentication:
+# it is meant for a private network such as a Tailscale tailnet, where access
+# is already authenticated at the network layer. Listening on 0.0.0.0 would
+# expose monitor control to the whole LAN.
+Environment=DDC_WEB_HOST=127.0.0.1
+Environment=DDC_WEB_PORT=8081
+
+# If the network interface is not up yet at boot, the bind fails.
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,249 @@
+#!/usr/bin/env python3
+"""
+r45w - control a Lenovo Legion R45w-30 from the terminal.
+
+    r45w                      current state
+    r45w list                 every control and the values it accepts
+    r45w get <control>        read one value
+    r45w set <control> <val>  change one value
+    r45w help <control>       what it does, how it is encoded, its caveats
+    r45w json                 state as JSON, for scripts
+
+Values can be given by name, by number, or in hex:
+
+    r45w set left usb-c             r45w set left 0x31
+    r45w set brightness 80          r45w set mode "pbp 50"
+    r45w set gamma 2.2              r45w swap
+
+Shortcuts:  r45w swap  ·  r45w kvm  (switch the KVM peripherals)
+
+INPUT ALIASES
+    Inputs are named after the physical ports by default. Give them your own
+    names and use those everywhere:
+
+    r45w alias                      show current aliases
+    r45w alias usb-c "MacBook"      name an input
+    r45w alias usb-c --clear        remove one name
+
+    Aliases live in ~/.config/r45w/aliases.json (override with R45W_CONFIG).
+
+Environment: DDC_DISPLAY (default 1), DDC_LOCK, R45W_CONFIG.
+"""
+
+import json
+import os
+import sys
+import time
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
+import r45w  # noqa: E402
+
+G = "\033[32m"; D = "\033[90m"; B = "\033[1m"; X = "\033[0m"
+if not sys.stdout.isatty() or os.environ.get("NO_COLOR"):
+    G = D = B = X = ""
+
+
+def die(msg, code=1):
+    print(f"r45w: {msg}", file=sys.stderr)
+    sys.exit(code)
+
+
+def find_control(key):
+    c = r45w.BY_KEY.get(key)
+    if c is None:
+        die(f"unknown control: {key}. Try 'r45w list'.")
+    return c
+
+
+def find_port(text):
+    """Match an input by port name or by alias, case-insensitively."""
+    t = text.strip().lower()
+    aliases = r45w.load_aliases()
+    hits = [code for code, name in r45w.PORTS.items()
+            if t == name.lower() or t in name.lower().replace("-", "")]
+    hits += [code for code, name in aliases.items() if t in name.lower()]
+    if len(set(hits)) == 1:
+        return hits[0]
+    if len(set(hits)) > 1:
+        die("ambiguous input: " + ", ".join(r45w.port_label(h) for h in set(hits)))
+    try:
+        code = int(t, 0)
+    except ValueError:
+        die("unknown input. Known: " +
+            ", ".join(r45w.port_label(h) for h in r45w.PORTS))
+    if code not in r45w.PORTS:
+        die(f"not an input code: {code:#04x}")
+    return code
+
+
+def resolve(c, text):
+    t = text.strip().lower()
+    if c["type"] == "range":
+        try:
+            n = int(t, 0)
+        except ValueError:
+            die(f"'{text}' is not a number")
+        if not 0 <= n <= c.get("max", 100):
+            die(f"out of range: 0-{c.get('max', 100)}")
+        return n
+    if c["type"] == "action":
+        return c["value"]
+    if c["key"] in ("left", "right"):
+        return find_port(text)
+    opts = r45w.options_of(c)
+    hits = [o for o in opts
+            if t in o["txt"].lower() or t in (o.get("sub") or "").lower()]
+    if len(hits) == 1:
+        return hits[0]["val"]
+    if len(hits) > 1:
+        die("ambiguous, matches: " + ", ".join(o["txt"] for o in hits))
+    try:
+        n = int(t, 0)
+    except ValueError:
+        die("unknown value. Accepts: " + ", ".join(o["txt"] for o in opts))
+    if n not in [o["val"] for o in opts]:
+        die("value not accepted. Accepts: " +
+            ", ".join(f"{o['txt']} ({o['val']:#x})" for o in opts))
+    return n
+
+
+def cmd_state(_=None):
+    try:
+        st = r45w.read()
+    except r45w.MonitorError as e:
+        die(str(e))
+    print(f"\n  {B}Lenovo Legion R45w-30{X}   {st['_layout']['text']}\n")
+    for group, title in r45w.GROUPS:
+        cs = [c for c in r45w.CONTROLS if c["group"] == group and c["read"]]
+        if not cs:
+            continue
+        print(f"  {D}{title}{X}")
+        for c in cs:
+            ro = f" {D}(read only){X}" if not c["write"] else ""
+            print(f"    {c['name']:<20} {G}{st[c['key']]['text']}{X}{ro}")
+        print()
+
+
+def cmd_list(_=None):
+    print()
+    for group, title in r45w.GROUPS:
+        cs = [c for c in r45w.CONTROLS if c["group"] == group]
+        if not cs:
+            continue
+        print(f"  {D}{title}{X}")
+        for c in cs:
+            if not c["write"]:
+                vals = f"{D}read only{X}"
+            elif c["type"] == "range":
+                vals = f"0-{c.get('max', 100)}"
+            elif c["type"] == "action":
+                vals = f"{D}action{X}"
+            else:
+                vals = " · ".join(o["txt"] for o in r45w.options_of(c))
+            print(f"    {c['key']:<14} {c['name']:<20} {vals}")
+        print()
+
+
+def cmd_get(args):
+    if not args:
+        die("usage: r45w get <control>")
+    c = find_control(args[0])
+    try:
+        st = r45w.read(indexed=c["read"].startswith("kvm:"))
+    except r45w.MonitorError as e:
+        die(str(e))
+    print(st[c["key"]]["text"])
+
+
+def cmd_set(args):
+    if len(args) < 2:
+        die("usage: r45w set <control> <value>")
+    key, text = args[0], " ".join(args[1:])
+    c = find_control(key)
+    if not c["write"]:
+        die(f"'{c['name']}' is read only. {c.get('help', '')}")
+    value = resolve(c, text)
+    try:
+        previous = r45w.read(indexed=False)
+    except r45w.MonitorError as e:
+        die(str(e))
+    err = r45w.write(key, value, previous=previous)
+    if err:
+        die(err)
+    if c.get("slow"):
+        print(f"  applying... {D}(the monitor is recomposing the picture){X}", flush=True)
+        r45w.wait_until_stable()
+    else:
+        time.sleep(1)
+    try:
+        st = r45w.read(indexed=c["read"].startswith("kvm:"))
+        print(f"  {c['name']}: {G}{st[key]['text']}{X}")
+    except r45w.MonitorError:
+        print("  applied (the monitor is not answering yet to confirm it)")
+
+
+def cmd_help(args):
+    if not args:
+        print(__doc__)
+        return
+    c = find_control(args[0])
+    print(f"\n  {B}{c['name']}{X}  ({c['key']})")
+    print(f"  reads: {c['read'] or '-'}   writes: {c['write'] or 'no, read only'}")
+    if c.get("help"):
+        print(f"\n  {c['help']}")
+    if c["type"] == "enum":
+        print("\n  values:")
+        for o in r45w.options_of(c):
+            sub = f"  {D}{o['sub']}{X}" if o.get("sub") else ""
+            print(f"    {o['val']:#06x}  {o['txt']}{sub}")
+    elif c["type"] == "range":
+        print(f"\n  range: 0-{c.get('max', 100)}")
+    print()
+
+
+def cmd_alias(args):
+    aliases = r45w.load_aliases()
+    if not args:
+        print()
+        for code, port in r45w.PORTS.items():
+            name = aliases.get(code)
+            print(f"    {port:<12} {G}{name}{X}" if name else f"    {port:<12} {D}(no alias){X}")
+        print(f"\n  {D}file: {r45w.CONFIG}{X}\n")
+        return
+    code = find_port(args[0])
+    if len(args) < 2:
+        die(f'usage: r45w alias {args[0]} "Name"   |   r45w alias {args[0]} --clear')
+    if args[1] in ("--clear", "-c"):
+        aliases.pop(code, None)
+        r45w.save_aliases(aliases)
+        print(f"  {r45w.PORTS[code]}: alias removed")
+        return
+    aliases[code] = " ".join(args[1:])
+    r45w.save_aliases(aliases)
+    print(f"  {r45w.PORTS[code]}: {G}{aliases[code]}{X}")
+
+
+def cmd_json(_=None):
+    try:
+        st = r45w.read()
+    except r45w.MonitorError as e:
+        print(json.dumps({"error": str(e)}))
+        sys.exit(1)
+    print(json.dumps(st, ensure_ascii=False, indent=2))
+
+
+COMMANDS = {"state": cmd_state, "list": cmd_list, "get": cmd_get, "set": cmd_set,
+            "help": cmd_help, "json": cmd_json, "alias": cmd_alias,
+            "swap": lambda _: cmd_set(["swap", "1"]),
+            "kvm": lambda _: cmd_set(["kvm_switch", "1"])}
+
+if __name__ == "__main__":
+    argv = sys.argv[1:]
+    if not argv:
+        cmd_state()
+    elif argv[0] in ("-h", "--help"):
+        print(__doc__)
+    elif argv[0] in COMMANDS:
+        COMMANDS[argv[0]](argv[1:])
+    else:
+        die(f"unknown command: {argv[0]}\n{__doc__}")

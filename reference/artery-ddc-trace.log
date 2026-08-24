@@ -1,0 +1,224 @@
+18:28:32.945  LenovoDisplayControlCenter.exe(60580) dxva2.dll en 0x54d70000
+18:28:32.945  LenovoDisplayControlCenter.exe(60580) hook SetVCPFeature OK
+18:28:32.945  LenovoDisplayControlCenter.exe(60580) hook GetVCPFeature OK
+enganchado: LenovoDisplayControlCenter.exe pid 60580
+18:28:32.954  LenovoDisplayControlCenterService.exe(15620) dxva2.dll en 0x54d70000
+18:28:32.954  LenovoDisplayControlCenterService.exe(15620) hook SetVCPFeature OK
+18:28:32.954  LenovoDisplayControlCenterService.exe(15620) hook GetVCPFeature OK
+enganchado: LenovoDisplayControlCenterService.exe pid 15620
+18:28:32.966  DCCPIPCtrlWnd.exe(17708)           dxva2.dll en 0x54d70000
+18:28:32.966  DCCPIPCtrlWnd.exe(17708)           hook SetVCPFeature OK
+18:28:32.966  DCCPIPCtrlWnd.exe(17708)           hook GetVCPFeature OK
+enganchado: DCCPIPCtrlWnd.exe pid 17708
+18:28:32.977  FloatingMenu.exe(12580)            dxva2.dll en 0x54d70000
+18:28:32.977  FloatingMenu.exe(12580)            hook SetVCPFeature OK
+18:28:32.977  FloatingMenu.exe(12580)            hook GetVCPFeature OK
+enganchado: FloatingMenu.exe pid 12580
+--- trazando. Usa Artery ahora. ---
+18:28:35.622  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:28:40.697  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:28:45.758  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:28:50.827  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:28:55.886  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:00.956  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:06.028  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:11.095  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:16.173  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:21.234  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:25.336  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:25.463  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x3131 max=0xFFFF  ok
+18:29:25.586  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:25.713  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x5111 max=0xFFFF  ok
+18:29:25.835  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0007   ok
+18:29:25.898  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x0001 max=0xFFFF  ok
+18:29:26.307  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:31.358  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:36.422  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:40.271  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:40.394  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x5131   ok
+18:29:40.510  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:40.625  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x3111   ok
+18:29:41.485  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:43.888  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:44.002  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x3131   ok
+18:29:44.130  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:44.250  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x5111   ok
+18:29:46.564  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:51.636  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:53.001  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:53.111  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x3131   ok
+18:29:53.235  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:53.354  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x510F   ok
+18:29:54.746  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:54.864  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x3131   ok
+18:29:54.992  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:55.106  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x5111   ok
+18:29:56.696  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:29:57.994  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:58.100  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x310F   ok
+18:29:58.211  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:58.338  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x5111   ok
+18:29:59.098  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0107   ok
+18:29:59.227  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x3131   ok
+18:29:59.346  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0207   ok
+18:29:59.464  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x5111   ok
+18:30:01.757  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:06.827  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:09.355  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0007   ok
+18:30:09.421  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x0000   ok
+18:30:11.885  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:11.947  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0007   ok
+18:30:12.012  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x0001   ok
+18:30:16.949  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:22.006  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:27.074  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:32.146  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:37.216  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:42.292  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:47.358  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:52.425  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:30:57.494  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:02.558  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:07.611  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:10.205  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0015   ok
+18:31:10.268  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x0000 max=0xFFFF  ok
+18:31:11.758  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0015   ok
+18:31:11.821  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x0001   ok
+18:31:12.684  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:12.810  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0015   ok
+18:31:12.872  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF7 = 0x0000   ok
+18:31:17.741  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:18.239  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0004   ok
+18:31:18.359  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x0046 max=0xFFFF  ok
+18:31:18.414  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0001   ok
+18:31:18.527  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x0007 max=0x0007  ok
+18:31:18.900  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x310F max=0xFFFF  ok
+18:31:19.051  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x001A   ok
+18:31:19.115  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x0000 max=0xFFFF  ok
+18:31:19.287  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFA = 0x1000   ok
+18:31:19.412  LenovoDisplayControlCenterService.exe(15620) lee      0xFA -> cur=0x1000 max=0xFFFF  ok
+18:31:19.474  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFA = 0x1200   ok
+18:31:19.599  LenovoDisplayControlCenterService.exe(15620) lee      0xFA -> cur=0x1200 max=0xFFFF  ok
+18:31:19.661  LenovoDisplayControlCenterService.exe(15620) lee      0x10 -> cur=0x004E max=0x0064  ok
+18:31:19.724  LenovoDisplayControlCenterService.exe(15620) lee      0x12 -> cur=0x0049 max=0x0064  ok
+18:31:20.298  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xF8 = 0x0015   ok
+18:31:20.361  LenovoDisplayControlCenterService.exe(15620) lee      0xF7 -> cur=0x0000 max=0xFFFF  ok
+18:31:22.810  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:27.866  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:32.934  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:38.013  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:43.078  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:48.144  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:53.203  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:31:58.276  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:03.340  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:08.407  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:13.483  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:18.556  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:23.621  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:28.698  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:33.762  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:34.430  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:34.492  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x310F max=0xFFFF  ok
+18:32:34.615  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:32:34.677  LenovoDisplayControlCenterService.exe(15620) lee      0xF5 -> cur=0x0101 max=0x0402  ok
+18:32:34.739  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x310F max=0xFFFF  ok
+18:32:34.862  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:32:38.841  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:43.906  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:45.194  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0x60 = 0x110F   ok
+18:32:48.972  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:49.145  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:32:53.852  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xA5 = 0x0100   ok
+18:32:54.221  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:54.394  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:54.502  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:54.604  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:54.710  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:54.821  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:54.923  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:55.027  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:55.136  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:55.246  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:56.922  LenovoDisplayControlCenterService.exe(15620) lee      0x78 -> cur=0x0000 max=0x0000  FALLO
+18:32:56.978  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:32:57.033  LenovoDisplayControlCenterService.exe(15620) lee      0xC9 -> cur=0x0000 max=0x0000  FALLO
+18:32:57.761  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFC = 0x100A   ok
+18:32:57.816  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:32:57.875  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFC = 0x100A   ok
+18:32:57.991  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:32:58.216  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:32:58.391  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:32:58.555  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:32:59.312  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:32:59.486  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0100 max=0x0201  ok
+18:32:59.549  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:32:59.707  LenovoDisplayControlCenterService.exe(15620) lee      0x78 -> cur=0x0000 max=0x0000  FALLO
+18:32:59.771  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:32:59.834  LenovoDisplayControlCenterService.exe(15620) lee      0xC9 -> cur=0x0000 max=0x0000  FALLO
+18:33:00.086  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFC = 0x100A   ok
+18:33:00.144  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:00.269  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:00.336  LenovoDisplayControlCenterService.exe(15620) lee      0xF5 -> cur=0x0000 max=0x0402  ok
+18:33:00.396  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:00.458  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0100 max=0x0201  ok
+18:33:00.518  LenovoDisplayControlCenterService.exe(15620) lee      0x95 -> cur=0x0F00 max=0x0F00  ok
+18:33:00.581  LenovoDisplayControlCenterService.exe(15620) lee      0x96 -> cur=0x0000 max=0x0438  ok
+18:33:00.642  LenovoDisplayControlCenterService.exe(15620) lee      0x97 -> cur=0x1400 max=0x1400  ok
+18:33:00.706  LenovoDisplayControlCenterService.exe(15620) lee      0x98 -> cur=0x0168 max=0x05A0  ok
+18:33:00.764  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:01.389  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0100 max=0x0201  ok
+18:33:01.450  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:01.574  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:01.633  LenovoDisplayControlCenterService.exe(15620) lee      0xF5 -> cur=0x0000 max=0x0402  ok
+18:33:01.691  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:01.820  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:05.762  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0100 max=0x0201  ok
+18:33:05.816  LenovoDisplayControlCenterService.exe(15620) lee      0x95 -> cur=0x0F00 max=0x0F00  ok
+18:33:05.870  LenovoDisplayControlCenterService.exe(15620) lee      0x96 -> cur=0x0000 max=0x0438  ok
+18:33:05.925  LenovoDisplayControlCenterService.exe(15620) lee      0x97 -> cur=0x1400 max=0x1400  ok
+18:33:05.978  LenovoDisplayControlCenterService.exe(15620) lee      0x98 -> cur=0x0168 max=0x05A0  ok
+18:33:11.047  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0100 max=0x0201  ok
+18:33:11.102  LenovoDisplayControlCenterService.exe(15620) lee      0x95 -> cur=0x0F00 max=0x0F00  ok
+18:33:11.155  LenovoDisplayControlCenterService.exe(15620) lee      0x96 -> cur=0x0000 max=0x0438  ok
+18:33:11.217  LenovoDisplayControlCenterService.exe(15620) lee      0x97 -> cur=0x1400 max=0x1400  ok
+18:33:11.271  LenovoDisplayControlCenterService.exe(15620) lee      0x98 -> cur=0x0168 max=0x05A0  ok
+18:33:16.338  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0100 max=0x0201  ok
+18:33:16.401  LenovoDisplayControlCenterService.exe(15620) lee      0x95 -> cur=0x0F00 max=0x0F00  ok
+18:33:16.465  LenovoDisplayControlCenterService.exe(15620) lee      0x96 -> cur=0x0000 max=0x0438  ok
+18:33:16.528  LenovoDisplayControlCenterService.exe(15620) lee      0x97 -> cur=0x1400 max=0x1400  ok
+18:33:16.590  LenovoDisplayControlCenterService.exe(15620) lee      0x98 -> cur=0x0168 max=0x05A0  ok
+18:33:18.096  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xA5 = 0x0200   ok
+18:33:21.173  LenovoDisplayControlCenterService.exe(15620) lee      0x78 -> cur=0x0000 max=0x0000  FALLO
+18:33:21.232  LenovoDisplayControlCenterService.exe(15620) lee      0xF5 -> cur=0x0000 max=0x0000  FALLO
+18:33:21.290  LenovoDisplayControlCenterService.exe(15620) lee      0xC9 -> cur=0x0000 max=0x0000  FALLO
+18:33:21.360  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFC = 0x100A   ok
+18:33:21.964  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:33:22.026  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:22.152  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:33:22.325  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:33:22.492  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:33:22.663  LenovoDisplayControlCenterService.exe(15620) lee      0xF5 -> cur=0x0000 max=0x0000  FALLO
+18:33:22.726  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:33:22.900  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x0000 max=0x0000  FALLO
+18:33:23.072  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:23.196  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:33:23.366  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0000 max=0x0000  FALLO
+18:33:23.538  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:24.007  LenovoDisplayControlCenterService.exe(15620) lee      0x78 -> cur=0x0000 max=0x0000  FALLO
+18:33:24.070  LenovoDisplayControlCenterService.exe(15620) lee      0xC9 -> cur=0x0101 max=0xFFFF  ok
+18:33:24.145  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0xFC = 0x100A   ok
+18:33:24.522  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:33:24.583  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:24.709  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:24.772  LenovoDisplayControlCenterService.exe(15620) lee      0xF5 -> cur=0x0101 max=0x0402  ok
+18:33:24.835  LenovoDisplayControlCenterService.exe(15620) lee      0x60 -> cur=0x110F max=0xFFFF  ok
+18:33:24.962  LenovoDisplayControlCenterService.exe(15620) lee      0x14 -> cur=0x0008 max=0x000F  ok
+18:33:26.670  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+18:33:31.641  LenovoDisplayControlCenterService.exe(15620) ESCRIBE  0x60 = 0x310F   ok
+18:33:31.733  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:33:31.903  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:33:32.076  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:33:32.242  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0000 max=0x0000  FALLO
+18:33:32.413  LenovoDisplayControlCenterService.exe(15620) lee      0xF4 -> cur=0x0200 max=0x0201  ok
+--- fin de la traza ---
