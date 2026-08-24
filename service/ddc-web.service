@@ -1,12 +1,12 @@
 [Unit]
 Description=ddc-web - Lenovo R45w-30 control over the local network
-# Adjust ExecStart if you cloned the repository somewhere other than ~/r45w.
+# Adjust ExecStart if you cloned the repository somewhere other than ~/ddc-toolkit.
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 %h/r45w/service/ddc-web.py
+ExecStart=/usr/bin/python3 %h/ddc-toolkit/service/ddc-web.py
 
 # Bind one specific address on purpose. This service has no authentication:
 # it is meant for a private network such as a Tailscale tailnet, where access

@@ -1,4 +1,7 @@
-# r45w — DDC/CI control for the Lenovo Legion R45w-30
+# ddc-toolkit — DDC/CI control for monitors, register map included
+
+The monitor mapped so far is the **Lenovo Legion R45w-30**, and its tool is
+`r45w`. The parts that carry over to other monitors are listed further down.
 
 Drive an ultrawide monitor shared between several machines entirely by command:
 which input goes in each window, the layout, the built-in KVM, picture settings
