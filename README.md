@@ -272,8 +272,7 @@ decreasing order of authority:
 | File | What it is |
 |---|---|
 | `artery-ddc-trace.log` | A capture of Lenovo's own utility talking to the monitor: every VCP read and write it issues. The strongest evidence here |
-| `lenovo-vcp-codes.json` | Lenovo's generic VCP definition table, shipped with that utility. Names most of the manufacturer-reserved codes |
-| `lenovo-app-enable-keys.json` | Decodes the feature bitmap reported in `0xC6` |
+| `lenovo-vcp-codes.json` | Lenovo's generic VCP definition table, shipped with that utility. Names most of the manufacturer-reserved codes. **Lenovo's file, not ours** — see `LICENSE` |
 | `capabilities-string.txt` | What this monitor declares about itself — **wrong in both directions**, see `reference/README.md` |
 
 ### If you are an AI agent working in this repository
@@ -328,3 +327,14 @@ The only prior work we found on this model is
 ControlMyMonitor scripts to toggle PBP. It agrees with our findings on `0xF5`
 and `0x60`, and it is what prompted us to re-test three registers we had
 dismissed using the wrong values.
+
+---
+
+## License
+
+MIT — see [`LICENSE`](LICENSE). Do what you like with it; keep the copyright
+notice; there is no warranty.
+
+One exception, spelled out in that file: `reference/lenovo-vcp-codes.json` is
+Lenovo's own data file, reproduced unmodified for reference. All rights to it
+remain with Lenovo.

@@ -42,11 +42,11 @@ register is layout mode plus swap flag, and nothing to do with size.
 
 Use it to generate hypotheses, then verify against the hardware.
 
-## `lenovo-app-enable-keys.json`
-
-`AppEnableKeyDef.json`, also from Artery. Decodes the feature bitmap that
-monitors report in `0xC6` (Application enable key), i.e. which features a given
-unit claims to support.
+**This file is Lenovo's, not ours.** It is reproduced unmodified because it is
+otherwise hard to find, and it is excluded from this project's licence — see
+[`../LICENSE`](../LICENSE). Artery also ships `AppEnableKeyDef.json`, which
+decodes the feature bitmap reported in `0xC6`; it is not included here because
+nothing in this project uses it.
 
 ## `capabilities-string.txt`
 
