@@ -24,12 +24,15 @@ $ r45w
   Lenovo Legion R45w-30   PBP 50/50
 
   Layout
+    Layout               PBP 50/50
     Left window          Workstation (DisplayPort)
     Right window         MacBook (USB-C)
-    Screen               On
+    Swap windows         not swapped
   Peripherals
     Switch peripherals   on the USB-B upstream
     KVM                  Enabled
+  Sound
+    Volume               72
   ...
 ```
 

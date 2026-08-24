@@ -112,7 +112,7 @@ CONTROLS = [
      "labels": {0: "not swapped", 1: "swapped"},
      "help": "Swaps the two windows. Audio follows them. The monitor ignores "
              "this when both windows show the same source."},
-    {"key": "power", "name": "Screen", "group": "layout",
+    {"key": "power", "name": "Screen", "group": "power",
      "type": "enum", "read": "0xD6:sl", "write": "0xD6:byte", "slow": True,
      "help": "The monitor keeps answering DDC/CI while off, so it can be turned "
              "back on by command without touching the physical button.",
@@ -140,7 +140,7 @@ CONTROLS = [
      "type": "range", "read": "0x10:val", "write": "0x10:byte", "max": 100},
     {"key": "contrast", "name": "Contrast", "group": "image",
      "type": "range", "read": "0x12:val", "write": "0x12:byte", "max": 100},
-    {"key": "volume", "name": "Speaker volume", "group": "image",
+    {"key": "volume", "name": "Volume", "group": "sound",
      "type": "range", "read": "0x62:val", "write": "0x62:byte", "max": 100,
      "help": "Works even though the monitor does NOT declare it in its "
              "capabilities string."},
@@ -236,8 +236,17 @@ CONTROLS = [
 ]
 BY_KEY = {c["key"]: c for c in CONTROLS}
 
-GROUPS = [("layout", "Layout"), ("kvm", "Peripherals"), ("image", "Image"),
-          ("color", "Color"), ("advanced", "Advanced"), ("info", "Information")]
+# (key, title, control whose value stands for the group when collapsed)
+GROUPS = [
+    ("layout",   "Layout",      None),
+    ("kvm",      "Peripherals", "kvm_switch"),
+    ("sound",    "Sound",       "volume"),
+    ("image",    "Picture",     "picture_mode"),
+    ("power",    "Power",       "power"),
+    ("color",    "Colour",      "color_preset"),
+    ("advanced", "Advanced",    None),
+    ("info",     "Monitor",     None),
+]
 
 # Registers read in a single call. kvm: ones are separate: each needs its index
 # latched first.
@@ -417,6 +426,12 @@ def write(key, value, previous=None):
     return None
 
 
+def read_index(index):
+    """Re-read one index-based value. After changing the KVM there is no reason
+    to pay for all five of them."""
+    return _read_indexed(index)
+
+
 def wait_until_stable(limit=25, indexed=False):
     """Two identical consecutive reads. A layout change takes up to ~10 s and
     the monitor stops answering DDC while it recomposes: waiting a fixed time
@@ -430,5 +445,7 @@ def wait_until_stable(limit=25, indexed=False):
         if v is not None and v == prev:
             return v
         prev = v
-        time.sleep(1)
+        # A read already takes ~1.4 s, which is most of the spacing the two
+        # matching reads need; a full extra second on top only adds latency.
+        time.sleep(0.3)
     return prev

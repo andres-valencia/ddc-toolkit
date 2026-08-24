@@ -113,7 +113,7 @@ def cmd_state(_=None):
     except r45w.MonitorError as e:
         die(str(e))
     print(f"\n  {B}Lenovo Legion R45w-30{X}   {st['_layout']['text']}\n")
-    for group, title in r45w.GROUPS:
+    for group, title, _lead in r45w.GROUPS:
         cs = [c for c in r45w.CONTROLS if c["group"] == group and c["read"]]
         if not cs:
             continue
@@ -126,7 +126,7 @@ def cmd_state(_=None):
 
 def cmd_list(_=None):
     print()
-    for group, title in r45w.GROUPS:
+    for group, title, _lead in r45w.GROUPS:
         cs = [c for c in r45w.CONTROLS if c["group"] == group]
         if not cs:
             continue
